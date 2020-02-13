@@ -1,0 +1,44 @@
+
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Add Environement<i class="material-icons" style="float:right">
+                            note_add
+                            </i></h4>
+                      
+                    </div>
+                    <div class="card-body">
+          
+                            <form #f="ngForm" (ngSubmit)="addEnvironement(f.value)"  >
+                                <div class="row">                                 
+                                    <div class="col-md-6">
+                                        <div class="example-full-width">
+                                      
+                                            <input  type="hidden" name="id_environement" ngModel [(ngModel)]="environement.id_environement" >
+                                        </div>
+                                        <mat-form-field class="example-full-width">
+                                          <input matInput placeholder="Name" name="nomEnv" type="text" ngModel [(ngModel)]="environement.nomEnv">
+                                        </mat-form-field>
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="type environement" name="type_environement" type="text" ngModel [(ngModel)]="environement.type_environement">
+                                          </mat-form-field>
+          
+                                              
+                                    </div>
+                                    
+                    
+                                
+                      </div>
+                      <button mat-raised-button type="submit" class="btn btn-danger pull-right" >Finish</button>
+                      </form>
+                    </div>
+                    </div>
+  
+  
+          </div>
+          </div>
+          </div>

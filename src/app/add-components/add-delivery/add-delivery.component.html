@@ -1,0 +1,74 @@
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Add Delivery<i class="material-icons" style="float:right">
+                            note_add
+                            </i></h4>
+                      
+                    </div>
+                    <div class="card-body">
+          
+                            <form #f="ngForm" (ngSubmit)="addDelivery(f.value)"  >
+                                <div class="row">                                 
+                                    <div class="col-md-6">
+                                        <div class="example-full-width">
+                                      
+                                            <input  type="hidden" name="id_delivery" ngModel [(ngModel)]="delivery.id_delivery" >
+                                        </div>
+                                        <mat-form-field class="example-full-width">
+                                          <input matInput placeholder="Name" name="name" type="text" ngModel [(ngModel)]="delivery.name">
+                                        </mat-form-field>
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Owner" name="owner" type="text" ngModel [(ngModel)]="delivery.owner">
+                                          </mat-form-field>
+                                          <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Author" name="author" type="text" ngModel [(ngModel)]="delivery.author">
+                                          </mat-form-field>
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="State" name="state" type="text" ngModel [(ngModel)]="delivery.state">
+                                          </mat-form-field>
+                                          <mat-form-field class="example-full-width">
+                                              <input matInput placeholder="Choose a date Date" name="date_creation" [matDatepicker]="picker" ngModel [(ngModel)]="delivery.date_creation">
+                                              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                              <mat-datepicker #picker></mat-datepicker>
+                                            </mat-form-field>
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput ngModel [(ngModel)]="delivery.date_livraison" name="date_livraison" [matDatepicker]="picker2" placeholder="Choose a date">
+                                                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                                                <mat-datepicker #picker2></mat-datepicker>
+                                              </mat-form-field>
+                                              <mat-form-field class="example-full-width">
+                                                  <mat-select placeholder="Target Environements" name="environements" ngModel [(ngModel)]="te" multiple>
+                                                      <mat-option *ngFor="let te of target_environements" [value]="te">{{te.nomEnv}}</mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+
+                                       
+
+
+                                            <mat-form-field class="example-full-width">
+                                                <mat-select placeholder="Milestones" name="milestones" ngModel [(ngModel)]="me" multiple>
+                                                    <mat-option *ngFor="let me of milestones" [value]="me">{{me.owner}}</mat-option>
+                                                  </mat-select>
+                                              </mat-form-field>
+                                            
+                                          
+                                    </div>
+                                    
+                    
+                                
+                      </div>
+                      
+                      <button mat-raised-button type="submit" class="btn btn-danger pull-right" >Finish</button>
+                      </form>
+                    </div>
+                    </div>
+  
+  
+          </div>
+          </div>
+          </div>

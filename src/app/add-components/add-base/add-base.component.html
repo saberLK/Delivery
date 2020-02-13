@@ -1,0 +1,51 @@
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Add Base<i class="material-icons" style="float:right">
+                            note_add
+                            </i></h4>
+                      
+                    </div>
+                    <div class="card-body">
+          
+                            <form #f="ngForm" (ngSubmit)="addBase(f.value)"  >
+                                <div class="row">                                 
+                                    <div class="col-md-6">
+                                        <div class="example-full-width">
+                                      
+                                            <input  type="hidden" name="id_base" ngModel [(ngModel)]="base.id_base" >
+                                        </div>
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Username" name="username" type="text" ngModel [(ngModel)]="base.username">
+                                          </mat-form-field>
+                                        <mat-form-field class="example-full-width">
+                                          <input matInput placeholder="Password" name="password" type="text" ngModel [(ngModel)]="base.password">
+                                        </mat-form-field>
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Url" name="url" type="text" ngModel [(ngModel)]="base.url">
+                                          </mat-form-field>
+                                          <mat-form-field class="example-full-width">
+                                              <input matInput placeholder="Ip Adresse" name="adresse_ip" type="text" ngModel [(ngModel)]="base.adresse_ip">
+                                            </mat-form-field>
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Environement name" name="nomEnv" type="text" ngModel [(ngModel)]="base.nomEnv ">
+                                              </mat-form-field>
+                                         
+                                    </div>
+                                    
+                    
+                                
+                      </div>
+                      <button mat-raised-button type="submit" class="btn btn-danger pull-right" >Next</button>
+                      </form>
+                    </div>
+                    </div>
+  
+  
+          </div>
+          </div>
+          </div>

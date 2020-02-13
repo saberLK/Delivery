@@ -1,0 +1,72 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-10" style="margin-top:50px;" >
+              <div class="card card-plain">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title mt-0"> Les Activités</h4>
+                    </div>
+                      <div class="card-body">
+                          <div class="table-responsive">
+                                  <table class="table table-hover">
+                                          <thead class="text-primary">
+                                                  <th>
+                                                          ID
+                                                      </th>
+                                                      <th>
+                                                              author 
+                                                      </th>
+                                                      <th>
+                                                            Headline
+                                                      </th>
+                                                      <th>
+                                                          Date de Creation
+                                                      </th>
+                                                      <th>
+                                                            Owner
+                                                      </th>
+                                                      <th>Priority</th>
+                                                      <th>
+                                                              State
+                                                      </th>
+                                                   
+                                          </thead>
+                                          <tbody *ngFor="let a of activity">
+                                                  <tr >
+                                                      <td >
+                                                          {{a.id_activity}}
+                                                      </td>
+                                                      <td>
+                                                          {{a.author}}
+                                                      </td>
+                                                      <td>
+                                                          {{a.headline}}
+                                                      </td>
+                                                      <td>
+                                                          {{a.date_creation}}
+                                                      </td>
+                                                      <td>
+                                                          {{a.owner}}
+                                                      </td>
+                                      
+                                             
+                                                      <td>
+                                                          {{a.priority}}
+                                                      </td>
+                                                    <td>
+                                                      {{a.state}}
+                                                    </td>
+                                                              
+                                                          
+                                                  </tr> 
+                                                  
+                                              </tbody>
+                                      </table>
+                          </div>
+                      </div>
+                  </div>
+                  </div>
+                
+        </div>
+        </div>
+        </div> 

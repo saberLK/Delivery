@@ -1,0 +1,41 @@
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Add Connection Information<i class="material-icons" style="float:right">
+                            note_add
+                            </i></h4>
+                      
+                    </div>
+                    <div class="card-body">
+          
+                        
+                                <div class="row">                                 
+                                    <div class="col-md-6">
+
+                                            
+                                                    <mat-form-field class="example-full-width">
+                                                        <mat-select placeholder="Environements"  (change)="onSelect1(selectedValue1)" [(ngModel)]="selectedValue1" name="environement" >
+                                                          <mat-option *ngFor="let environement of environementscnx" [value]="environement">
+                                                              {{environement.nomEnv}}
+                                                          </mat-option>
+                                                        </mat-select>
+                                                        
+                                                      </mat-form-field>
+                                    </div>
+                                    
+                    
+                                
+                      </div>
+                      <button mat-raised-button type="submit" (click)="addInfoscnx()" class="btn btn-danger pull-right" >Start</button>
+                 
+                    </div>
+                    </div>
+  
+  
+          </div>
+          </div>
+          </div>

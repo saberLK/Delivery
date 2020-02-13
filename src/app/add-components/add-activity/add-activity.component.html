@@ -1,0 +1,59 @@
+
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-8">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title">Add Activity<i class="material-icons" style="float:right">
+                        note_add
+                        </i></h4>
+                    
+                  </div>
+                  <div class="card-body">
+        
+                          <form #f="ngForm" (ngSubmit)="addActivity(f.value)"  >
+                              <div class="row">                                 
+                                  <div class="col-md-6" >
+                                      <div class="example-full-width">
+                                    
+                                          <input  type="hidden" name="id" ngModel [(ngModel)]="activity.id_activity" >
+                                      </div>
+                                      <mat-form-field class="example-full-width">
+                                          <input matInput placeholder="Name" name="name_activity" type="text" ngModel [(ngModel)]="activity.name_activity">
+                                        </mat-form-field>
+                                      <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Owner" name="owner" type="text" ngModel [(ngModel)]="activity.owner">
+                                      </mat-form-field>
+                                      <mat-form-field class="example-full-width">
+                                          <input matInput placeholder="Headline" name="headline" type="text" ngModel [(ngModel)]="activity.headline">
+                                        </mat-form-field>
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="State" name="state" type="text" ngModel [(ngModel)]="activity.state">
+                                          </mat-form-field>
+                                          <mat-form-field class="example-full-width">
+                                              <input matInput placeholder="Priority" name="priority" type="text" ngModel [(ngModel)]="activity.priority">
+                                            </mat-form-field>
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Choose a date Date" name="date_creation" [matDatepicker]="picker" ngModel [(ngModel)]="activity.date_creation">
+                                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                                <mat-datepicker #picker></mat-datepicker>
+                                              </mat-form-field>
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Author" name="author" type="text" ngModel [(ngModel)]="activity.author">
+                                                </mat-form-field>
+                                        
+                                  </div>
+                                  
+                  
+                              
+                    </div>
+                    <button mat-raised-button type="submit" class="btn btn-danger pull-right" >Finish</button>
+                    </form>
+                  </div>
+                  </div>
+
+
+        </div>
+        </div>
+        </div>

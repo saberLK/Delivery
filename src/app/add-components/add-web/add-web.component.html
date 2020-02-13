@@ -1,0 +1,52 @@
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Add Web<i class="material-icons" style="float:right">
+                            note_add
+                            </i></h4>
+                      
+                    </div>
+                    <div class="card-body">
+          
+                            <form #f="ngForm" (ngSubmit)="addWeb(f.value)"  >
+                                <div class="row">                                 
+                                    <div class="col-md-6">
+                                        <div class="example-full-width">
+                                      
+                                            <input  type="hidden" name="id_web" ngModel [(ngModel)]="web.id_web" >
+                                        </div>
+                                    
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Username" name="username" type="text" ngModel [(ngModel)]="web.username">
+                                          </mat-form-field>
+                                        <mat-form-field class="example-full-width">
+                                          <input matInput placeholder="Password" name="password" type="text" ngModel [(ngModel)]="web.password">
+                                        </mat-form-field>
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Url" name="url" type="text" ngModel [(ngModel)]="web.url">
+                                          </mat-form-field>
+                                          <mat-form-field class="example-full-width">
+                                              <input matInput placeholder="Ip Adresse" name="adresse_ip" type="text" ngModel [(ngModel)]="web.adresse_ip">
+                                            </mat-form-field>
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Environement name" name="nomEnv" type="text" ngModel [(ngModel)]="web.nomEnv ">
+                                              </mat-form-field>
+                                         
+                                    </div>
+                                    
+                    
+                                
+                      </div>
+                      <button mat-raised-button type="submit" class="btn btn-danger pull-right" >Next</button>
+                      </form>
+                    </div>
+                    </div>
+  
+  
+          </div>
+          </div>
+          </div>

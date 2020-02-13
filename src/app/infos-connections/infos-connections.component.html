@@ -1,0 +1,220 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+           
+            <div class="col-md-8">
+                <div class="card card-plain">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title mt-0"> Filter</h4>
+                        <!-- <p class="card-category"> Here is a subtitle for this table</p> -->
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            
+                                <mat-card class="card-body">
+                                        <mat-form-field>
+                                            <mat-select placeholder="Versions"  (change)="onSelect1(selectedValue1)" [(ngModel)]="selectedValue1" name="v" >
+                                              <mat-option *ngFor="let v of versions" [value]="v.id_version">
+                                                {{ v.nomVersion }}
+                                              </mat-option>
+                                            </mat-select>
+                                       
+                                          </mat-form-field>
+                                    <mat-form-field *ngIf="projects">
+                                            <mat-select placeholder="Projects"  (change)="onSelect2(selectedValue2)" [(ngModel)]="selectedValue2" name="p" >
+                                              <mat-option *ngFor="let p of projects" [value]="p.id_project">
+                                                {{ p.project_name }}
+                                              </mat-option>
+                                            </mat-select>
+                                            
+                                          </mat-form-field>
+                                      
+                                          <mat-form-field *ngIf="environements">
+                                                <mat-select placeholder="Environements"  (change)="onSelect3(selectedValue3)" [(ngModel)]="selectedValue3" name="e">
+                                                  <mat-option *ngFor="let e of environements" [value]="e.id_environement">
+                                                    {{ e.nomEnv}}
+                                                  </mat-option>
+                                                </mat-select>
+                                              </mat-form-field>
+                                            </mat-card>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+         
+             <div class="col-md-6" style="margin-top:50px;" *ngIf="web">
+                    <div class="card card-plain" >
+                        <div class="card-header card-header-success">
+                            <h4 class="card-title mt-0"> Web<i class="material-icons" style="float:right">list</i></h4>
+                  
+                        </div>
+                        <div class="card-body" >
+                            <div class="table-responsive">
+                                    <table class="table table-hover">
+                                            <thead class="text-primary">
+                                                <th>id_web</th>
+                                                <th>username</th>
+                                                <th>password</th>
+                                                <th>url</th>
+                                                <th>adresse_ip</th>
+                                            </thead>
+                                            <tbody>
+                                                  <tr>
+                                                      <td>{{web.id_web}}</td>  
+                                                      <td>{{web.username}}</td>  
+                                                      <td>{{web.password}}</td>  
+                                                      <td>
+                                                        <a href="http://{{web.url}}" target="_blank"> {{web.url}}</a>
+                                                    </td>
+                                                      <td>{{web.adresse_ip}}</td>  
+                                            
+                                                  </tr>
+                                                </tbody>
+                                        </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 
+                
+             <div class="col-md-6" style="margin-top:50px;" *ngIf="base">
+                <div class="card card-plain" >
+                    <div class="card-header card-header-success">
+                        <h4 class="card-title mt-0"> Base<i class="material-icons" style="float:right">list</i></h4>
+              
+                    </div>
+                    <div class="card-body" >
+                        <div class="table-responsive">
+                                <table class="table table-hover">
+                                        <thead class="text-primary">
+                                            <th>id_base</th>
+                                            <th>username</th>
+                                            <th>password</th>
+                                            <th>url</th>
+                                            <th>adresse_ip</th>
+                                        </thead>
+                                        <tbody>
+                                              <tr>
+                                                  <td>{{base.id_base}}</td>  
+                                                  <td>{{base.username}}</td>  
+                                                  <td>{{base.password}}</td>  
+                                                  <td>
+                                                    <a href="http://{{base.url}}" target="_blank"> {{base.url}}</a>
+                                                 </td> 
+                                                  <td>{{base.adresse_ip}}</td>  
+                                        
+                                              </tr>
+                                            </tbody>
+                                    </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="col-md-6" style="margin-top:50px;" *ngIf="appcs">
+                <div class="card card-plain" >
+                    <div class="card-header card-header-success">
+                        <h4 class="card-title mt-0"> Application Console<i class="material-icons" style="float:right">list</i></h4>
+              
+                    </div>
+                    <div class="card-body" >
+                        <div class="table-responsive">
+                                <table class="table table-hover">
+                                        <thead class="text-primary">
+                                            <th>id_appconsole</th>
+                                            <th>username</th>
+                                            <th>password</th>
+                                            <th>url</th>
+                                            <th>ip_adress</th>
+                                        </thead>
+                                        <tbody>
+                                              <tr>
+                                                  <td>{{appcs.id_appconsole}}</td>  
+                                                  <td>{{appcs.username}}</td>  
+                                                  <td>{{appcs.password}}</td>  
+                                                  <td>
+                                                    <a href="http://{{appcs.url}}" target="_blank"> {{appcs.url}}</a>
+                                                 </td>
+                                                  <td>{{appcs.ip_adress}}</td>  
+                                        
+                                              </tr>
+                                            </tbody>
+                                    </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6" style="margin-top:50px;" *ngIf="appux">
+                <div class="card card-plain" >
+                    <div class="card-header card-header-success">
+                        <h4 class="card-title mt-0">Application Unix<i class="material-icons" style="float:right">list</i></h4>
+              
+                    </div>
+                    <div class="card-body" >
+                        <div class="table-responsive">
+                                <table class="table table-hover">
+                                        <thead class="text-primary">
+                                            <th>id_appunix</th>
+                                            <th>username</th>
+                                            <th>password</th>
+                                            <th>url</th>
+                                            <th>adresse_ip</th>
+                                        </thead>
+                                        <tbody>
+                                              <tr>
+                                                  <td>{{appux.id_appunix}}</td>  
+                                                  <td>{{appux.username}}</td>  
+                                                  <td>{{appux.password}}</td>  
+                                                  <td>
+                                                    <a href="http://{{appux.url}}" target="_blank"> {{appux.url}}</a>
+                                                 </td> 
+                                                  <td>{{appux.adresse_ip}}</td>  
+                                        
+                                              </tr>
+                                            </tbody>
+                                    </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6" style="margin-top:50px;" *ngIf="unix">
+                <div class="card card-plain" >
+                    <div class="card-header card-header-success">
+                        <h4 class="card-title mt-0"> Unix<i class="material-icons" style="float:right">list</i></h4>
+              
+                    </div>
+                    <div class="card-body" >
+                        <div class="table-responsive">
+                                <table class="table table-hover">
+                                        <thead class="text-primary">
+                                            <th>id_unix</th>
+                                            <th>username</th>
+                                            <th>password</th>
+                                            <th>url</th>
+                                            <th>adresse_ip</th>
+                                        </thead>
+                                        <tbody>
+                                              <tr>
+                                                  <td>{{unix.id_unix}}</td>  
+                                                  <td>{{unix.username}}</td>  
+                                                  <td>{{unix.password}}</td>  
+                                                  <td>
+                                                    <a href="http://{{unix.url}}" target="_blank"> {{unix.url}}</a>
+                                                 </td>
+                                                  <td>{{unix.adresse_ip}}</td>  
+                                        
+                                              </tr>
+                                            </tbody>
+                                    </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  

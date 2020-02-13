@@ -1,0 +1,27 @@
+mat-card {
+  max-width: 400px;
+  margin: 2em auto;
+  text-align: center;
+background-color:lavender;
+opacity: .80;
+}
+.signin-content {
+  padding: 102px 1rem;
+
+}
+.full-width-input {
+  width: 100%;
+
+}
+body{
+  background-color:rgb(147, 176, 187);
+  background-image: url("../../assets/img/437407.jpg");
+
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+.card-modify{
+  background-color:rgb(210, 224, 224);
+}
+

@@ -1,0 +1,49 @@
+
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-8">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title">Edit Application Console</h4>
+                    
+                  </div>
+                  <div class="card-body">
+        
+                          <form #f="ngForm" (ngSubmit)="editAppcs(f.value)"  >
+                              <div class="row">                                 
+                                  <div class="col-md-6">
+                                      <div class="example-full-width">
+                                    
+                                          <input  type="hidden" name="id_appconsole" ngModel [(ngModel)]="appcs.id_appconsole" >
+                                      </div>
+                                      <mat-form-field class="example-full-width">
+                                          <input matInput placeholder="Username" name="username" type="text" ngModel [(ngModel)]="appcs.username">
+                                        </mat-form-field>
+                                      <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Password" name="password" type="text" ngModel [(ngModel)]="appcs.password">
+                                      </mat-form-field>
+                                      <mat-form-field class="example-full-width">
+                                          <input matInput placeholder="Url" name="url" type="text" ngModel [(ngModel)]="appcs.url">
+                                        </mat-form-field>
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Ip Adresse" name="adresse_ip" type="text" ngModel [(ngModel)]="appcs.ip_adress">
+                                          </mat-form-field>
+                                          <mat-form-field class="example-full-width">
+                                              <input matInput placeholder="Environement name" name="nomEnv" type="text" ngModel [(ngModel)]="appcs.nomEnv ">
+                                            </mat-form-field>
+                                       
+                                  </div>
+                                  
+                  
+                              
+                    </div>
+                    <button mat-raised-button type="submit" class="btn btn-danger pull-right" >Finish</button>
+                    </form>
+                  </div>
+                  </div>
+
+
+        </div>
+        </div>
+        </div>

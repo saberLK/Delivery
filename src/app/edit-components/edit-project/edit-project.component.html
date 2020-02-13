@@ -1,0 +1,48 @@
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Edit Project</h4>
+                      
+                    </div>
+                    <div class="card-body">
+          
+                            <form #f="ngForm" (ngSubmit)="editProject(f.value)"  >
+                                <div class="row">                                 
+                                    <div class="col-md-6">
+                                        <div class="example-full-width">
+                                      
+                                            <input  type="hidden" name="id_project" ngModel [(ngModel)]="project.id_project" >
+                                        </div>
+                                        <mat-form-field class="example-full-width">
+                                          <input matInput placeholder="project name" name="project_name" type="text" ngModel [(ngModel)]="project.project_name">
+                                        </mat-form-field>
+          
+                                            <mat-form-field class="example-full-width">
+                                                <mat-select placeholder="Environements" name="environements" ngModel [(ngModel)]="project.environements" multiple>
+                                                    <mat-option *ngFor="let env of environementsNull" [value]="env">{{env.nomEnv}}</mat-option>
+                                                  </mat-select>
+                                              </mat-form-field>
+                                              <mat-form-field class="example-full-width">
+                                                      <mat-select placeholder="Deliveries" name="deliveries" ngModel [(ngModel)]="project.deliveries" multiple>
+                                                          <mat-option *ngFor="let del of deliveriesNull" [value]="del">{{del.owner}}</mat-option>
+                                                        </mat-select>
+                                                    </mat-form-field>
+                                     
+                                    </div>
+                                    
+                    
+                                
+                      </div>
+                      <button mat-raised-button type="submit" class="btn btn-danger pull-right" >Finish</button>
+                      </form>
+                    </div>
+                    </div>
+  
+  
+          </div>
+          </div>
+          </div>

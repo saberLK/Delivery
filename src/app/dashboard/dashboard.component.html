@@ -1,0 +1,89 @@
+
+<div class="main-content">
+     
+  <div class="container-fluid">
+   <!--   /* style="margin-left:150px; " -->
+      <div class="row" >
+          <div class="col-md-6">
+              <div class="card">
+                  <div class="card-header card-header-primary">
+                      <h4 class="card-title">Pie Graph : Number of deliveries per owner<i class="material-icons" style="float:right;">pie_chart</i></h4>
+                  </div>
+                  <div class="card-body">
+        <kendo-chart>
+       
+          <kendo-chart-series>
+ 
+            <kendo-chart-series-item
+                type="pie" [data]="seriesData"
+                field="VAL" categoryField="KEY">
+                <kendo-chart-series-item-labels visible="true">
+                    </kendo-chart-series-item-labels>
+            </kendo-chart-series-item>
+            <kendo-chart-tooltip>
+                <ng-template kendoChartSeriesTooltipTemplate let-value="value" let-category="category">
+                        {{ category }} : {{ convert(value) | number : '1.2-2'}}%
+                 </ng-template>
+      
+             </kendo-chart-tooltip>
+          </kendo-chart-series>
+  
+        </kendo-chart>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-6">
+              <div class="card">
+                  <div class="card-header card-header-primary">
+                      <h4 class="card-title">BarGraph : Number of deliveries per Project<i class="material-icons" style="float:right;">bar_chart</i></h4>
+                  </div>
+                  <div class="card-body">
+        <kendo-chart>
+          <kendo-chart-series>
+
+            <kendo-chart-series-item
+                type="column" [gap]="2" [spacing]=".25" [data]="seriesData2"
+                field="nbr_deliveries" categoryField="project_name">
+            </kendo-chart-series-item>
+            <kendo-chart-tooltip>
+                <ng-template kendoChartSeriesTooltipTemplate let-value="value" let-category="category">
+                        {{ category }} : {{ value }} delivery
+                 </ng-template>
+             </kendo-chart-tooltip>
+          </kendo-chart-series>
+        </kendo-chart>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-header-primary">
+                    <h4 class="card-title">Line Graph : Number of delivery per month<i class="material-icons" style="float:right;">timeline</i></h4>
+                </div>
+                
+                <div class="card-body">
+                       
+                        <mat-form-field  style="width:20%;">
+                             
+                                <mat-select placeholder="choose a year" (change)="onSelect(selectedvalue)"  name="anne" ngModel [(ngModel)]="selectedvalue">
+                                        <i class="material-icons">access_time</i>
+                                    <mat-option *ngFor="let a of anne" [value]="a">{{a}}</mat-option>
+                                  </mat-select>
+                              </mat-form-field>
+ 
+                    <kendo-chart [categoryAxis]="{ categories: categories }">
+                            <kendo-chart-title text="-- All projects deliveries per month in {{selectedvalue}} --" color="green"></kendo-chart-title>
+                            <kendo-chart-legend position="bottom" orientation="horizontal"></kendo-chart-legend>
+                            <kendo-chart-tooltip format="{0}%"></kendo-chart-tooltip>
+                            <kendo-chart-series>
+                                <kendo-chart-series-item *ngFor="let item of seriesData3"
+                                    type="line"   [data]="item.VAL" [name]="item.KEY">
+                                </kendo-chart-series-item>
+                            </kendo-chart-series>
+                        </kendo-chart>
+                    </div>
+                    </div>
+                    </div> 
+      </div>
+  </div>
+</div>

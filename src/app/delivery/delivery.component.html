@@ -1,0 +1,105 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+           
+            <div class="col-md-8">
+                <div class="card card-plain">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title mt-0"> Filter</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            
+                                <mat-card class="card-body">
+                                        <mat-form-field>
+                                            <mat-select placeholder="Versions"  (change)="onSelect1(selectedValue1)" [(ngModel)]="selectedValue1" name="v" >
+                                              <mat-option *ngFor="let v of versions" [value]="v.id_version">
+                                                {{ v.nomVersion }}
+                                              </mat-option>
+                                            </mat-select>
+                                       
+                                          </mat-form-field>
+                                    <mat-form-field *ngIf="projects">
+                                            <mat-select placeholder="Projects"  (change)="onSelect2(selectedValue2)" [(ngModel)]="selectedValue2" name="p" >
+                                              <mat-option *ngFor="let p of projects" [value]="p.id_project">
+                                                {{ p.project_name }}
+                                              </mat-option>
+                                            </mat-select>
+                                            
+                                          </mat-form-field>
+                                      </mat-card>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="col-md-10" style="margin-top:50px;" *ngIf="deliveries">
+                    <div class="card card-plain">
+                        <div class="card-header card-header-danger">
+                            <h4 class="card-title mt-0"> Delivery</h4>
+                  
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                    <table class="table table-hover">
+                                            <thead class="text-primary">
+                                                    <th>ID</th>
+                                                    <th>name</th>
+                                                    <th>state</th>
+                                                    <th>date_creation</th>
+                                                    <th>date_livraison</th>
+                                                    <th>Owner</th>
+                                                    <th>Les environements cible</th>
+                                                    <th>Milestones</th>
+                                            </thead>
+                                            <tbody *ngFor="let d of deliveries">
+                                                    <tr>
+                                                        <td>{{d.id_delivery}}</td>
+                                                        <td>{{d.name}}</td>
+                                                        <td>{{d.state}}</td>
+                                                        <td>{{d.date_creation}}</td>
+                                                        <td>{{d.date_livraison}}</td>
+                                                         <td>{{d.owner}}</td>
+
+                                                        <td> <mat-form-field>
+                                                                 
+                                                                <mat-select placeholder="Target_Environement"   name="dd" >
+                                                                  <mat-option *ngFor="let dd of d.environements" [value]="dd.nomEnv">
+                                                                    {{ dd.nomEnv }}
+                                                                  </mat-option>
+                                                                </mat-select>
+                                                           
+                                                              </mat-form-field></td>
+                                                              <td>   <i class="material-icons">list</i></td>
+                                                    
+                                                        <td>
+                                                                
+                                                                <mat-form-field>
+                                                                
+                                                            
+                                                                    <mat-select placeholder="Milestone"   name="dx" (change)="gotoactivitiespage(selectedValue5)" [(ngModel)]="selectedValue5" >
+                                                                            <mat-option *ngFor="let m of d.milestones" [value]="m.id_milestone" style="text-align:center;">
+                                                                             
+                                                                             <button mat-raised-button  style="text-align:center;color:red;">{{ m.owner }}</button>
+                                                                          
+                                                                            </mat-option>
+                                                                          </mat-select>
+                                                                  </mat-form-field>
+                                                        </td>
+                                                                 
+                                                    </tr>
+                                                    
+                                                </tbody>
+                                        </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+        </div>
+    </div>
+</div>
+  
+  

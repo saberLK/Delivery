@@ -1,0 +1,36 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title ">La liste des utilisateurs<i class="material-icons" style="float:right;">perm_contact_calendar</i></h4>
+ 
+                  </div>
+                  <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table">
+                              <thead class=" text-primary">
+                                 <th>ID</th>
+                                 <th>Nom d'utilisateur</th>
+                                 <th>Mot de passe</th>
+                                 <th>Role</th>
+                                 <th>Modifications</th>
+                              </thead>
+                              <tbody *ngFor="let u of users">
+                                  <td>{{u.id}}</td>
+                                  <td>{{u.username}}</td>
+                                  <td>{{u.password}}</td>
+                                  <td>{{u.roles.name}}</td>
+                                  <td><button class="btn btn-danger" (click) = "Delete(u.id)">Supprimer  </button>
+                                    <button class="btn btn-primary" (click) = "Update(u)">  Modifier</button></td>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          </div>
+          </div>
+          </div>
+          

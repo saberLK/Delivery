@@ -1,0 +1,69 @@
+
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-8">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title">Edit Profile</h4>
+                    
+                  </div>
+                  <div class="card-body">
+                      <form #f="ngForm" (ngSubmit)="Update(f.value)"  >
+                          <div class="row">                                 
+                              <div class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Nom d'utilisateur" name="username" type="text" ngModel [(ngModel)]="user.username">
+                                  </mat-form-field>
+                                  <div class="example-full-width">
+                                
+                                    <input  type="hidden" name="id" ngModel [(ngModel)]="user.id" >
+                                </div>
+                              </div>
+                              
+              
+                          </div>
+                          <div class="row">
+                    
+                              <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                      <input matInput placeholder="Mot de passe" name="password" type="text" [(ngModel)]="user.password">
+                                    </mat-form-field>
+                                  </div>
+                         
+                          </div>
+                         
+                          <div class="row">
+                                <div class="col-md-6">
+                                        <mat-form-field class="example-full-width">
+                                          
+                                                <mat-select placeholder="role"   name="roles" ngModel [(ngModel)]="user.roles">
+                                                  <mat-option style="color:black;"  *ngFor="let r of roless" [value]="r">{{r.name}}</mat-option>
+                                                </mat-select>
+                                             
+                                        </mat-form-field>
+                                      </div>
+                              </div>
+                              <button mat-raised-button type="submit" class="btn btn-danger pull-right" >Add/Update Profile</button>
+                    
+                      </form>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="card card-profile">
+                  <div class="card-avatar">
+                      <a href="#pablo">
+                          <img class="img" src="../../assets/img/manager-admin.png" />
+                      </a>
+                  </div>
+                  <div class="card-body">
+                      <h6 class="card-category text-gray">CEO / Co-Founder</h6>
+                      <h4 class="card-title"></h4>
+                 
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

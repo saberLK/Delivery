@@ -1,0 +1,72 @@
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Edit Delivery</h4>
+                      
+                    </div>
+                    <div class="card-body">
+          
+                            <form #f="ngForm" (ngSubmit)="editDelivery(f.value)"  >
+                                <div class="row">                                 
+                                    <div class="col-md-6">
+                                        <div class="example-full-width">
+                                      
+                                            <input  type="hidden" name="id_delivery" ngModel [(ngModel)]="delivery.id_delivery" >
+                                        </div>
+                                        <mat-form-field class="example-full-width">
+                                          <input matInput placeholder="Name" name="name" type="text" ngModel [(ngModel)]="delivery.name">
+                                        </mat-form-field>
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Owner" name="owner" type="text" ngModel [(ngModel)]="delivery.owner">
+                                          </mat-form-field>
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="State" name="state" type="text" ngModel [(ngModel)]="delivery.state">
+                                          </mat-form-field>
+                                          <mat-form-field class="example-full-width">
+                                              <input matInput placeholder="Creation Date" name="date_creation" type="text" ngModel [(ngModel)]="delivery.date_creation">
+                                            </mat-form-field>
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Delivery Date" name="date_livraison" type="text" ngModel [(ngModel)]="delivery.date_livraison">
+                                              </mat-form-field>
+                                              <mat-form-field class="example-full-width">
+                                                  <mat-select placeholder="Target_Environement" name="environements" ngModel [(ngModel)]="delivery.environements" multiple>
+                                                      <mat-option *ngFor="let te of delivery.environements" [value]="te">{{te.nomEnv}}</mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+                                            <mat-form-field class="example-full-width">
+                                                <mat-select placeholder="Milestones" name="milestones" ngModel [(ngModel)]="delivery.milestones" multiple>
+                                                    <mat-option *ngFor="let me of delivery.milestones" [value]="me">{{me.owner}}</mat-option>
+                                                  </mat-select>
+                                              </mat-form-field>
+                                              <div *ngIf="currentFileUpload" class="progress">
+                                                <div class="progress-bar progress-bar-info progress-bar-striped"
+                                                    role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
+                                                    aria-valuemin="0" aria-valuemax="100"
+                                                    [ngStyle]="{width:progress.percentage+'%'}">
+                                                    {{progress.percentage}}%</div>
+                                            </div>
+                                             
+                                            <label class="btn btn-default">
+                                                <input name="files" [(ngModel)]="delivery.files" type="file" (change)="selectFile($event)">
+                                            </label>
+                                             
+                                            <button class="btn btn-success" [disabled]="!selectedFiles"
+                                                (click)="upload(delivery.id_delivery)">Upload</button>
+                                    </div>
+                                    
+                    
+                                
+                      </div>
+                      <button mat-raised-button type="submit" class="btn btn-danger pull-right" >Finish</button>
+                      </form>
+                    </div>
+                    </div>
+  
+  
+          </div>
+          </div>
+          </div>

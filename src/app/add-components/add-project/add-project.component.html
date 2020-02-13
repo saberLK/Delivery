@@ -1,0 +1,57 @@
+
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-8">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title">Add Project<i class="material-icons" style="float:right">
+                        note_add
+                        </i></h4>
+                    
+                  </div>
+                  <div class="card-body">
+        
+                          <form #f="ngForm" (ngSubmit)="addProject(f.value)"  >
+                              <div class="row">                                 
+                                  <div class="col-md-6">
+                                      <div class="example-full-width">
+                                    
+                                          <input  type="hidden" name="id_project" ngModel [(ngModel)]="project.id_project" >
+                                      </div>
+                                      <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="project name" name="project_name" type="text" ngModel [(ngModel)]="project.project_name">
+                                      </mat-form-field>
+                                      <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="description" name="description" type="text" ngModel [(ngModel)]="project.description">
+                                      </mat-form-field>
+                                      <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Choose a date Date" name="date_creation" [matDatepicker]="picker" ngModel [(ngModel)]="project.date_creation">
+                                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker></mat-datepicker>
+                                      </mat-form-field>
+                                          <mat-form-field class="example-full-width">
+                                              <mat-select placeholder="Environements" name="environements" ngModel [(ngModel)]="environement" multiple>
+                                                  <mat-option *ngFor="let environement of environementNull" [value]="environement">{{environement.nomEnv}}</mat-option>
+                                                </mat-select>
+                                            </mat-form-field>
+                                            <mat-form-field class="example-full-width">
+                                                    <mat-select placeholder="Deliveries" name="deliveries" ngModel [(ngModel)]="delivery" multiple>
+                                                        <mat-option *ngFor="let delivery of deliveriesNull" [value]="delivery">{{delivery.owner}}</mat-option>
+                                                      </mat-select>
+                                                  </mat-form-field>
+                                   
+                                  </div>
+                                  
+                  
+                              
+                    </div>
+                    <button mat-raised-button type="submit" class="btn btn-danger pull-right" >Finish</button>
+                    </form>
+                  </div>
+                  </div>
+
+
+        </div>
+        </div>
+        </div>

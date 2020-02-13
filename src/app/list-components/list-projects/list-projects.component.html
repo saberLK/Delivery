@@ -1,0 +1,54 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title ">Projects List<i class="material-icons" style="float:right;">perm_contact_calendar</i></h4>
+                  </div>
+                  <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table">
+                              <thead class=" text-primary">
+                                 <th>Id</th>
+                                 <th>Project name</th>
+                                 <th>Environements</th>
+                                 <th>Deliveries</th>
+                             
+                              </thead>
+                              <tbody *ngFor="let p of projects">
+                                  <td>{{p.id_project}}</td>
+                                  <td>{{p.project_name}}</td>
+  
+                                  <td><mat-form-field>
+                                      <mat-select placeholder="Environements"  name="environements" ngModel [(ngModel)]="p.environements">
+                                        <mat-option *ngFor="let env of p.environements" style="color:black;" disabled [value]="env">{{env.nomEnv}}</mat-option>
+                                      </mat-select>
+                                    </mat-form-field></td>
+                                    <td><mat-form-field>
+                                            <mat-select placeholder="Deliveries"  name="deliveries" ngModel [(ngModel)]="p.deliveries">
+                                              <mat-option *ngFor="let del of p.deliveries" style="color:black;" disabled [value]="del">{{del.owner}}
+                                                  <button mat-raised-button (click) = "UpdateDel(del)" type="button" matTooltip="Edit Task" 
+                                                  [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
+                                                    <i class="material-icons">edit</i>
+                                                </button></mat-option>
+                                            </mat-select>
+                                          </mat-form-field></td>
+                  
+                                    <td class="td-actions text-right">
+                                      <button mat-raised-button (click) = "Update(p)" type="button" matTooltip="Edit Task" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
+                                          <i class="material-icons">edit</i>
+                                      </button>
+                                      <button mat-raised-button (click) = "Delete(p.id_project)" type="button" matTooltip="Remove" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
+                                          <i class="material-icons">restore_from_trash</i>
+                                      </button>
+                                  </td>
+                              </tbody>
+                            </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>    

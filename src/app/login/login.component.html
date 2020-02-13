@@ -1,0 +1,35 @@
+
+
+<body>
+
+    <div class="signin-content">
+      
+
+        <mat-card class="card-modify">
+          <mat-card-content >
+              <img src="../../assets/img/hps.png"/>
+            <form name="form-signin" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate class="example-form">
+                <i class="material-icons">
+                    lock_open
+                    </i> <h4 style="color:black;">Authentification</h4>
+              <mat-form-field class="full-width-input">
+                <input matInput type="text" [(ngModel)]="user.username" placeholder="Nom d'utilisateur" id="username"  name="username" #username="ngModel" required>
+                <mat-error *ngIf="f.submitted && !username.valid">
+                    Nom d'utilisateur <strong>Obligatoire</strong>
+                  </mat-error>
+              </mat-form-field>
+              <mat-form-field class="full-width-input">
+                  <input matInput type="password" [(ngModel)]="user.password" placeholder="Mot de passe" id="password" name="password" #password="ngModel" required>
+
+                  <mat-error *ngIf="f.submitted && !password.valid">
+                      Mot de passe <strong>Obligatoire</strong>
+                    </mat-error>
+              </mat-form-field>
+              <button mat-raised-button color="primary" style="color:black;" type="submit">Se connecter</button>
+            </form>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </body>
+
+    

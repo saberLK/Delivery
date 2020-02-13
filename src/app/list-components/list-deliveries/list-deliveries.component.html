@@ -1,0 +1,65 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Deliveries List<i class="material-icons" style="float:right;">perm_contact_calendar</i></h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                   <th>Id</th>
+                                   <th>Name</th>
+                                   <th>Owner</th>
+                                   <th>state</th>
+                                   <th>date_creation</th>
+                                   <th>date_livraison</th>
+                                   <th>Milestones</th>
+                                   <th>File</th>
+                                   <th>Target Environement</th>
+                                   <th></th>
+  
+                                </thead>
+                                <tbody *ngFor="let d of deliveries">
+                                    <td>{{d.id_delivery}}</td>
+                                    <td>{{d.name}}</td>
+                                    <td>{{d.owner}}</td>
+                                    <td>{{d.state}}</td>
+                                    <td>{{d.date_creation}}</td>
+                                    <td>{{d.date_livraison}}</td>
+                                    
+                                    <td><mat-form-field>
+                                        <mat-select placeholder="Milestones"  name="milestones" ngModel [(ngModel)]="d.milestones">
+                                          <mat-option style="color:black;" disabled *ngFor="let milestone of d.milestones" [value]="milestone">{{milestone.owner}}</mat-option>
+                                        </mat-select>
+                                      </mat-form-field></td>
+                                      <td *ngIf="d.files">   {{d.files.fileName} ...<button mat-raised-button (click)="download(d.id_delivery)" type="button" matTooltip="Download" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
+                                        <i class="material-icons">
+                                            cloud_download
+                                            </i>
+                                    </button></td>
+                                      <td ><mat-form-field >
+                                          <mat-select placeholder="Target environements"  name="environements" ngModel [(ngModel)]="d.environements">
+                                            <mat-option style="color:black;" disabled *ngFor="let te of d.environements" [value]="te">{{te.nomEnv}}</mat-option>
+                                          </mat-select>
+                                        </mat-form-field></td>
+                                        <td class="td-actions text-right">
+                                            <button mat-raised-button (click) = "Update(d)" type="button" matTooltip="Edit Task" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
+                                                <i class="material-icons">edit</i>
+                                            </button>
+                                            <button mat-raised-button (click) = "Delete(d.id_delivery)" type="button" matTooltip="Remove" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
+                                                <i class="material-icons">restore_from_trash</i>
+                                            </button>
+                                        </td>
+                                    
+                                </tbody>
+                              </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>    

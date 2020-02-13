@@ -1,0 +1,53 @@
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Add Milestone<i class="material-icons" style="float:right">
+                            note_add
+                            </i></h4>
+                      
+                    </div>
+                    <div class="card-body">
+          
+                            <form #f="ngForm" (ngSubmit)="addMilestone(f.value)"  >
+                                <div class="row">                                 
+                                    <div class="col-md-6">
+                                        <div class="example-full-width">
+                                      
+                                            <input  type="hidden" name="id_milestone" ngModel [(ngModel)]="milestone.id_milestone" >
+                                        </div>
+                                        <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Name" name="name_milestone" type="text" ngModel [(ngModel)]="milestone.name_milestone">
+                                              </mat-form-field>
+                                        <mat-form-field class="example-full-width">
+                                          <input matInput placeholder="Owner" name="owner" type="text" ngModel [(ngModel)]="milestone.owner">
+                                        </mat-form-field>
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="State" name="stats" type="text" ngModel [(ngModel)]="milestone.stats">
+                                          </mat-form-field>
+                                          <mat-form-field class="example-full-width">
+                                              <input matInput placeholder="Record type" name="record_type" type="text" ngModel [(ngModel)]="milestone.record_type">
+                                            </mat-form-field>
+                                            <mat-form-field class="example-full-width">
+                                                <mat-select placeholder="Activities" name="activities" ngModel [(ngModel)]="activity" multiple>
+                                                    <mat-option *ngFor="let activity of activitiesNull" [value]="activity">{{activity.name_activity}}</mat-option>
+                                                  </mat-select>
+                                              </mat-form-field>
+                                     
+                                    </div>
+                                    
+                    
+                                
+                      </div>
+                      <button mat-raised-button type="submit" class="btn btn-danger pull-right" >Finish</button>
+                      </form>
+                    </div>
+                    </div>
+  
+  
+          </div>
+          </div>
+          </div>

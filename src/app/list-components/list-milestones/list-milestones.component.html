@@ -1,0 +1,51 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Milestones List<i class="material-icons" style="float:right;">perm_contact_calendar</i></h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                   <th>Id</th>
+                                   <th>Name milestone</th>
+                                   <th>Owner</th>                              
+                                   <th>stats</th>                              
+                                   <th>record type</th>
+                                   <th>Activities</th>
+                                </thead>
+                                <tbody *ngFor="let m of milestones">
+                                    <td>{{m.id_milestone}}</td>
+                                    <td>{{m.name_milestone}}</td>
+                                    <td>{{m.owner}}</td>
+                                    <td>{{m.stats}}</td>
+                                    <td>{{m.record_type}}</td>
+                                    <td><mat-form-field>
+                                        <mat-select placeholder="Activities"  name="activities" ngModel [(ngModel)]="m.activities">
+                                          <mat-option *ngFor="let activity of m.activities" (change)="gotoactivity(activity)" style="color:black;" disabled [value]="activity">{{activity.owner}}     
+                                              <button mat-raised-button (click) = "UpdateAct(activity)" type="button" matTooltip="Edit Activity" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
+                                            <i class="material-icons" >edit</i>
+                                        </button></mat-option>
+                                        </mat-select>
+                                      </mat-form-field></td>
+                    
+                                      <td class="td-actions text-right">
+                                        <button mat-raised-button (click) = "Update(m)" type="button" matTooltip="Edit Milestone" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
+                                            <i class="material-icons">edit</i>
+                                        </button>
+                                        <button mat-raised-button (click) = "Delete(m.id_milestone)" type="button" matTooltip="Remove" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
+                                            <i class="material-icons">restore_from_trash</i>
+                                        </button>
+                                    </td>
+                                </tbody>
+                              </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>    
