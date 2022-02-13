@@ -30,7 +30,7 @@
     "@progress/kendo-angular-l10n": "^1.2.0",
     "@progress/kendo-drawing": "^1.5.7",
     "@progress/kendo-theme-default": "^2.54.1",
-    "ajv": "6.4.0",
+    "ajv": "6.12.3",
     "angular-material-fileupload": "0.0.11",
     "arrive": "2.4.1",
     "bootstrap": "^4.2.1",
